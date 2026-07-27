@@ -52,8 +52,8 @@ jobs:
           REGISTRY: ${{steps.login-ecr.outputs.registry}}
           TAG: ${{steps.generate_tag.outputs.sha}}
         run: |
-          docker build -t $REGISTRY/cicd_estudos/ci-cd-estudos:$TAG .
-          docker push $REGISTRY/cicd_estudos/ci-cd-estudos:$TAG
+          docker build -t $REGISTRY/cicd_estudos:$TAG .
+          docker push $REGISTRY/cicd_estudos:$TAG
 
       # - name: Push Image
       #   run: docker push ${{secrets.DOCKERHUB_USERNAME}}/ci-cd-estudos:${{steps.generate_tag.outputs.sha}}
