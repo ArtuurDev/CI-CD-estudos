@@ -1,0 +1,17 @@
+# Terraform / IaC
+.terraform/
+*.tfstate
+*.tfstate.*
+terraform.tfvars
+terraform.tfvars.json
+*.tfvars
+
+# Node.js
+node_modules/
+dist/
+build/
+*.log
+.env
+.env.*
+.tmp
+.temp
