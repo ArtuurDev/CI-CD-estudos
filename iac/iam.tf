@@ -1,3 +1,8 @@
+import {
+  to = aws_iam_openid_connect_provider.oidc-git
+  id = "arn:aws:iam::831181104004:oidc-provider/token.actions.githubusercontent.com"
+}
+
 resource "aws_iam_openid_connect_provider" "oidc-git" {
   url = "https://token.actions.githubusercontent.com"
 
@@ -31,8 +36,10 @@ resource "aws_iam_role" "ecr_role" {
             },
             "StringLike" : {
               "token.actions.githubusercontent.com:sub" : [
-                "repo:ArtuurDev/*",
-                "repo:ArtuurDev/*"
+                "repo:ArtuurDev/CI-CD-estudos:*",
+                "repo:artuurdev/ci-cd-estudos:*",
+                "repo:ArtuurDev*/CI-CD-estudos*",
+                "repo:artuurdev*/ci-cd-estudos*"
               ]
             }
           }
