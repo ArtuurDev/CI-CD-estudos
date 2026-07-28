@@ -60,7 +60,22 @@ resource "aws_iam_role_policy" "erc_policy" {
     Version = "2012-10-17"
     Statement = [
       {
-        Sid = "Statement1"
+        Sid      = "Statment1"
+        Action   = "apprunner:*"
+        Effect   = "Allow"
+        Resource = "*"
+      },
+      {
+        Sid = "Statment2"
+        Action = [
+          "iam:PassRole",
+          "iam:CreateServiceLinkedRole"
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      },
+      {
+        Sid = "Statement3"
         Action = [
           "ecr:GetDownloadUrlForLayer",
           "ecr:BatchGetImage",
@@ -77,4 +92,28 @@ resource "aws_iam_role_policy" "erc_policy" {
     ]
   })
 
+}
+
+
+resource "aws_iam_role" "app_runner_role" {
+  name = "app_runner_role"
+
+  assume_role_policy = jsonencode({
+    "Version" : "2012-10-17",
+    "Statement" : [
+      {
+        "Sid" : "Statement1",
+        "Effect" : "Allow",
+        "Principal" : {
+          Service : "build.apprunner.amazonaws.com"
+        },
+        "Action" : "sts:AssumeRole"
+      }
+    ]
+  })
+}
+
+resource "aws_iam_role_policy_attachment" "policy_" {
+  role       = aws_iam_role.app_runner_role.id
+  policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
 }
