@@ -69,7 +69,7 @@ jobs:
           cpu: 1
           memory: 2
           port: 3000
-          wait-for-service-stability-seconds: 180
+          wait-for-service-stability-seconds: 300
 
       # - name: Push Image
       #   run: docker push ${{secrets.DOCKERHUB_USERNAME}}/ci-cd-estudos:${{steps.generate_tag.outputs.sha}}
