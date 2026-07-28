@@ -36,11 +36,12 @@ jobs:
         uses: cycjimmy/semantic-release-action@v6
         with:
           working_directory: ./api
+
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
 
       - name: Generate tag
-        id: generate_tags
+        id: generate_tag
         run: |
           SHA=$(echo $GITHUB_SHA | head -c7)
           echo "sha=$SHA" >> $GITHUB_OUTPUT
