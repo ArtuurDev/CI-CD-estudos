@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/ArtuurDev/CI-CD-estudos/compare/v1.0.0...v1.0.1) (2026-07-28)
+
+
+### Bug Fixes
+
+* fix permissions ([b622bda](https://github.com/ArtuurDev/CI-CD-estudos/commit/b622bda36439a31c4de3cde7b16a41d954f34b8e))
+
 # 1.0.0 (2026-07-28)
 
 
