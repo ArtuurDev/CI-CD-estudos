@@ -63,7 +63,7 @@ jobs:
         uses: awslabs/amazon-app-runner-deploy@main
         with: 
           image: ${{steps.build-docker-image.outputs.image}}
-          service: api
+          service: api-cicd-estudos
           access-role-arn: arn:aws:iam::831181104004:role/app_runner_role
           region: us-east-2
           cpu: 1
