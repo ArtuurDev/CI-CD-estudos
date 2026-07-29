@@ -5,6 +5,7 @@
 terraform.tfvars
 terraform.tfvars.json
 *.tfvars
+**/.terraform/*
 
 # Node.js
 node_modules/
