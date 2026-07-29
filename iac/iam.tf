@@ -113,7 +113,69 @@ resource "aws_iam_role" "app_runner_role" {
   })
 }
 
-resource "aws_iam_role_policy_attachment" "policy_" {
+resource "aws_iam_role_policy_attachment" "policy_attach_apprunner" {
   role       = aws_iam_role.app_runner_role.id
   policy_arn = "arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryReadOnly"
+}
+
+
+resource "aws_iam_role" "tf_role" {
+  name = "tf-role"
+
+  assume_role_policy = jsonencode(
+    {
+      "Version" : "2012-10-17",
+      "Statement" : [
+        {
+          "Effect" : "Allow",
+          "Action" : "sts:AssumeRoleWithWebIdentity",
+          "Principal" : {
+            "Federated" : "arn:aws:iam::831181104004:oidc-provider/token.actions.githubusercontent.com"
+          },
+          "Condition" : {
+            "StringEquals" : {
+              "token.actions.githubusercontent.com:aud" : [
+                "sts.amazonaws.com"
+              ]
+            },
+            "StringLike" : {
+              "token.actions.githubusercontent.com:sub" : [
+                "repo:ArtuurDev/CI-CD-estudos:*",
+                "repo:artuurdev/ci-cd-estudos:*",
+                "repo:ArtuurDev*/CI-CD-estudos*",
+                "repo:artuurdev*/ci-cd-estudos*"
+              ]
+            }
+          }
+        }
+      ]
+  })
+  tags = {
+    IAC = "true"
+  }
+}
+
+resource "aws_iam_role_policy" "tf_policy" {
+  name = "tf-policy"
+  role = aws_iam_role.tf_role.id
+
+  policy = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Sid      = "Statment1"
+        Action   = "ecr:*"
+        Effect   = "Allow"
+        Resource = "*"
+      },
+      {
+        Sid = "Statment2"
+        Action = [
+          "iam:*",
+        ]
+        Effect   = "Allow"
+        Resource = "*"
+      }
+    ]
+  })
 }
