@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/ArtuurDev/CI-CD-estudos/compare/v1.0.1...v1.1.0) (2026-07-29)
+
+
+### Features
+
+* criando pipeline de iac ([df5fd3b](https://github.com/ArtuurDev/CI-CD-estudos/commit/df5fd3bb71594db0592e1a1a67d6d9ab1e352c09))
+
 ## [1.0.1](https://github.com/ArtuurDev/CI-CD-estudos/compare/v1.0.0...v1.0.1) (2026-07-28)
 
 
