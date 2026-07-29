@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/ArtuurDev/CI-CD-estudos/compare/v1.1.0...v1.1.1) (2026-07-29)
+
+
+### Bug Fixes
+
+* corrigindo diretorio de trabalho ([c659045](https://github.com/ArtuurDev/CI-CD-estudos/commit/c65904542ae12980ce8dbbdb0ccc9f2410b34e9c))
+
 # [1.1.0](https://github.com/ArtuurDev/CI-CD-estudos/compare/v1.0.1...v1.1.0) (2026-07-29)
 
 
