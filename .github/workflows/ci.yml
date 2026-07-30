@@ -4,6 +4,9 @@ on:
   push: 
     branches: 
       - main
+    paths:
+      # - 'api/**'
+      - '.github/workflows/ci.yml'
 
 permissions:
   id-token: write
