@@ -1,3 +1,15 @@
+# [1.3.0](https://github.com/ArtuurDev/CI-CD-estudos/compare/v1.2.0...v1.3.0) (2026-07-30)
+
+
+### Bug Fixes
+
+* tfvar ([6248821](https://github.com/ArtuurDev/CI-CD-estudos/commit/6248821e036f45d00be0332359eef4c5d3954ad0))
+
+
+### Features
+
+* adicioando TF_VAR para o funcionamento correto ([20c3631](https://github.com/ArtuurDev/CI-CD-estudos/commit/20c3631f4e83572c92dedf0f843c4f9bdd161682))
+
 # [1.2.0](https://github.com/ArtuurDev/CI-CD-estudos/compare/v1.1.2...v1.2.0) (2026-07-30)
 
 
