@@ -1,0 +1,7 @@
+Iniciar o backend s3 utilizando as credenciais privadas
+
+Com um bucket s3 criado, crie o arquivo config.backend, inicialize o seu backend sem expor as credenciais region e profile 
+com o comando ' terraform init "-backend-config=config.backend" '
+
+region = "region"
+profile = "profile"

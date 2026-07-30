@@ -6,6 +6,7 @@ terraform.tfvars
 terraform.tfvars.json
 *.tfvars
 **/.terraform/*
+iac/config.backend
 
 # Node.js
 node_modules/

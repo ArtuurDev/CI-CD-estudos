@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      # - 'iac/**'
+      - 'iac/**'
       - '.github/workflows/iac.ci.yml'
 
 permissions: 
@@ -28,13 +28,13 @@ jobs:
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v6
         with:
-          aws-region: us-east-2
-          role-to-assume: arn:aws:iam::831181104004:role/tf-role
+          aws-region: ${{secrets.REGION}}
+          role-to-assume: ${{secrets.ARN_ROLE_TF_ROLE}}
 
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v4
 
-      - name: Terraform init
+      - name: Terraform Init
         run: terraform init
 
       - name: Terraform format
