@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/ArtuurDev/CI-CD-estudos/compare/v1.1.2...v1.2.0) (2026-07-30)
+
+
+### Features
+
+* adiconando novo statment no tf_policy, criando backend s3 e criando arquivos de examples para variaveis ([477b3cc](https://github.com/ArtuurDev/CI-CD-estudos/commit/477b3cc0505190f34d58e03af627ce2ffbee7557))
+
 ## [1.1.2](https://github.com/ArtuurDev/CI-CD-estudos/compare/v1.1.1...v1.1.2) (2026-07-30)
 
 
