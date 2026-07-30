@@ -5,7 +5,7 @@ on:
     branches: 
       - main
     paths:
-      # - 'api/**'
+      - 'api/**'
       - '.github/workflows/ci.yml'
 
 permissions:
@@ -55,7 +55,7 @@ jobs:
         uses: aws-actions/configure-aws-credentials@v6.2.3
         with: 
           aws-region: us-east-2
-          role-to-assume: arn:aws:iam::831181104004:role/ecr_role
+          role-to-assume: ${{secrets.ARN_ROLE_ECR_ROLE}}
 
       - name: Login to Amazon ECR
         id: login-ecr
@@ -78,7 +78,7 @@ jobs:
         with: 
           image: ${{steps.build-docker-image.outputs.image}}
           service: api-cicd-estudos
-          access-role-arn: arn:aws:iam::831181104004:role/app_runner_role
+          access-role-arn: ${{secrets.ARN_ROLE_APP_RUNNER}}
           region: us-east-2
           cpu: 1
           memory: 2
